@@ -7,4 +7,3 @@ This is the repository for the [Customfield Editor Plugin](http://codeclou.io/re
   * [REST API](http://codeclou.io/redirect/r.php?r=ejxkybyx)
   * [EULA](http://codeclou.io/redirect/r.php?r=ogxydoym)
   * [Atlassian Marketplace](http://codeclou.io/redirect/r.php?r=wrmdoavx)
-  * 
