@@ -4,7 +4,7 @@
     "version" : "1.2",
     "title" : "Customfield Editor Plugin"
   },
-  "basePath" : "$contextPath/rest/jiracustomfieldeditorplugin/1.2",
+  "basePath" : "/rest/jiracustomfieldeditorplugin/1.2",
   "tags" : [ {
     "name" : "admin-custom-field-operations",
     "description" : "Admin level operations on custom field permissions"
