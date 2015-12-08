@@ -6,6 +6,7 @@ window.swaggerUi = new SwaggerUi({
     onComplete: function(swaggerApi, swaggerUi){ },
     onFailure: function(data) { alert(data); },
     docExpansion: "list",
+    validatorUrl: null,
     operationsSorter: function (a, b) {
         var aNormalized = a.path;
         var bNormalized = b.path;
