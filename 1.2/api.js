@@ -52,4 +52,3 @@ window.swaggerUi = new SwaggerUi({
     withCredentials: false
 });
 window.swaggerUi.load();
-});
