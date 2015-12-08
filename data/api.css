@@ -1,0 +1,137 @@
+body {
+    font-family:sans-serif;
+    margin-bottom:50px;
+    background-color:#f5f5f5;
+}
+.cep-page-container {
+	padding:50px;
+	background-color:#fff;
+}
+div.cep-nav-header {
+    background-color:#205081;
+    padding-bottom:30px;
+    width:100%;
+    height:41px;
+}
+.cep-nav-header__logo-container {
+    padding: 2px 0 0 8px;
+}
+.cep-nav-header__logo {
+    height:35px;
+}
+.cep-page-header {
+    background-color: #f5f5f5;
+    padding:20px;
+    border-bottom: 1px solid #ccc;
+}
+.cep-page-header__headline {
+    font-size: 24px;
+    line-height: 1.25;
+    color: #333;
+    padding:0px;
+    margin:0;
+}
+.cep-content-container {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ccc;
+}
+.cep-page-sidebar {
+    box-sizing: border-box;
+    display: table-cell;
+    padding: 20px;
+    vertical-align: top;
+}
+.cep-page-sidebar__nav {
+    width:199px;
+}
+.cep-page-sidebar__nav-ul {
+    list-style: none;
+}
+.cep-page-sidebar__nav-item {
+    color:#3b73af;
+    display: block;
+    padding: 7px 10px;
+    line-height: 1.14285714;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+.cep-page-sidebar__nav-item:hover {
+    background-color:#e6e6e6;
+    text-decoration: none;
+}
+.cep-page-sidebar__nav-item--active, .cep-page-sidebar__nav-item--active:hover {
+    color:#333;
+}
+
+.cep-page-sidebar__nav-heading {
+    color: #707070;
+    font-weight: bold;
+    line-height: 1.66666666666667;
+    text-transform: uppercase;
+    padding: 7px 10px;
+    font-size: 12px;
+    display: block;
+}
+.cep-page-content {
+    border-left: 1px solid #ccc;
+    box-sizing: border-box;
+    display: table-cell;
+    padding: 20px;
+    vertical-align: top;
+}
+.cep-footer-notice {
+    color:#ccc;
+}
+.cep-footer-notice a {
+    color:#ccc;
+}
+
+/* headlines */
+.cep-headline-primary {
+    background-image: url('./cep-logo-32.png');
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    padding-left: 38px;
+    padding-top:3px;
+    font-size: 22px;
+    line-height: 26px;
+    height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0;
+}
+.cep-headline-secondary {
+    display: inline-block;
+    font-size:16px;
+    padding-left: 38px;
+    font-weight:bold;
+    margin-top:3px;
+    margin-bottom:20px;
+}
+.cep-headline-tertiary {
+    display: inline-block;
+    font-size:16px;
+    font-weight:normal;
+    margin-top:0px;
+    margin-bottom:20px;
+}
+.cep-tertiary-headline-icon:before {
+    font-size:16px;
+}
+
+
+/* bootstrap fix */
+.row {
+    margin-top:15px;
+}
+.cep--no-margin {
+    margin: 0;
+}
+.cep--no-padding {
+    padding:0;
+}
+#resources_container {
+    width:100%;
+}
