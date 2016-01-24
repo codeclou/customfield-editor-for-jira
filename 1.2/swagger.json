@@ -6,11 +6,11 @@
   },
   "basePath" : "/jira/rest/jiracustomfieldeditorplugin/1.2",
   "tags" : [ {
-    "name" : "admin-custom-field-operations",
-    "description" : "Admin level operations on custom field permissions"
-  }, {
     "name" : "user-custom-field-operations",
     "description" : "User level operations on custom fields"
+  }, {
+    "name" : "admin-custom-field-operations",
+    "description" : "Admin level operations on custom field permissions"
   } ],
   "paths" : {
     "/admin/customfields" : {
@@ -791,6 +791,74 @@
         }
       }
     },
+    "/user/customfields/{customFieldId}/contexts/default/options/{optionId}/childoptions/sort" : {
+      "put" : {
+        "tags" : [ "user-custom-field-operations" ],
+        "summary" : "Sorts the options of a parent-option for the customfield in default context [n1.2]",
+        "description" : "<hr><u>Version History</u><ul><li><b>New in 1.2</b></li></ul> ",
+        "operationId" : "sortChildOptionsInDefaultContext",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "customFieldId",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "default" : "12345",
+          "format" : "int64"
+        }, {
+          "name" : "optionId",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "default" : "123",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "See: http://docs.oracle.com/javase/7/docs/api/java/text/Collator.html",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SortModel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CustomFieldOptionModel"
+            }
+          },
+          "400" : {
+            "description" : "Validation Error for field.",
+            "schema" : {
+              "$ref" : "#/definitions/ValidationErrors"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized (no user is authenticated)."
+          },
+          "403" : {
+            "description" : "Permission Denied (insufficient rights on field).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "412" : {
+            "description" : "not available under the requested URL (min version).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "500" : {
+            "description" : "Entity does not exist. Or any other error.",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          }
+        }
+      }
+    },
     "/user/customfields/{customFieldId}/contexts/default/options/{optionId}/childoptions/{childOptionId}" : {
       "put" : {
         "tags" : [ "user-custom-field-operations" ],
@@ -872,9 +940,9 @@
       },
       "delete" : {
         "tags" : [ "user-custom-field-operations" ],
-        "summary" : "Deletes an child-option of a parent-option [n1.1]",
-        "description" : "<b>This feature is only available for the customfield type Cascading Select Field.</b><br><br>Deletes an child-option of an parent-option of the customfield by its id.",
-        "operationId" : "deleteChildOption",
+        "summary" : "Deletes a child-option of a parent-option for default context [c1.2]",
+        "description" : "<b>This feature is only available for the customfield type Cascading Select Field.</b><br><br>Deletes a child-option of a parent-option of the customfield by its id.",
+        "operationId" : "deleteChildOptionInSpecificContext",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
@@ -900,11 +968,29 @@
           "format" : "int64"
         } ],
         "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/DeleteOk"
+            }
+          },
+          "400" : {
+            "description" : "Validation Error for field.",
+            "schema" : {
+              "$ref" : "#/definitions/ValidationErrors"
+            }
+          },
           "401" : {
             "description" : "Unauthorized (no user is authenticated)."
           },
           "403" : {
             "description" : "Permission Denied (insufficient rights on field).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "406" : {
+            "description" : "operation not supported for fieldType or other unsupported operation.",
             "schema" : {
               "$ref" : "#/definitions/RestError"
             }
@@ -1733,6 +1819,81 @@
         }
       }
     },
+    "/user/customfields/{customFieldId}/contexts/{contextId}/options/{optionId}/childoptions/sort" : {
+      "put" : {
+        "tags" : [ "user-custom-field-operations" ],
+        "summary" : "Sorts the options of a parent-option for the customfield in specific context [n1.2]",
+        "description" : "<hr><u>Version History</u><ul><li><b>New in 1.2</b></li></ul> ",
+        "operationId" : "sortChildOptionsInSpecificContext",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "customFieldId",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "default" : "12345",
+          "format" : "int64"
+        }, {
+          "name" : "contextId",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "default" : "678",
+          "format" : "int64"
+        }, {
+          "name" : "optionId",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "default" : "123",
+          "format" : "int64"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "See: http://docs.oracle.com/javase/7/docs/api/java/text/Collator.html",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/SortModel"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/CustomFieldOptionModel"
+            }
+          },
+          "400" : {
+            "description" : "Validation Error for field.",
+            "schema" : {
+              "$ref" : "#/definitions/ValidationErrors"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized (no user is authenticated)."
+          },
+          "403" : {
+            "description" : "Permission Denied (insufficient rights on field).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "412" : {
+            "description" : "not available under the requested URL (min version).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "500" : {
+            "description" : "Entity does not exist. Or any other error.",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          }
+        }
+      }
+    },
     "/user/customfields/{customFieldId}/contexts/{contextId}/options/{optionId}/childoptions/{childOptionId}" : {
       "put" : {
         "tags" : [ "user-custom-field-operations" ],
@@ -1782,6 +1943,84 @@
             "description" : "successful operation",
             "schema" : {
               "$ref" : "#/definitions/CustomFieldOptionModel"
+            }
+          },
+          "400" : {
+            "description" : "Validation Error for field.",
+            "schema" : {
+              "$ref" : "#/definitions/ValidationErrors"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized (no user is authenticated)."
+          },
+          "403" : {
+            "description" : "Permission Denied (insufficient rights on field).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "406" : {
+            "description" : "operation not supported for fieldType or other unsupported operation.",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "412" : {
+            "description" : "not available under the requested URL (min version).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "500" : {
+            "description" : "Entity does not exist. Or any other error.",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "user-custom-field-operations" ],
+        "summary" : "Deletes a child-option of a parent-option for specific context [n1.2]",
+        "description" : "<b>This feature is only available for the customfield type Cascading Select Field.</b><br><br>Deletes a child-option of a parent-option of the customfield by its id.",
+        "operationId" : "deleteChildOptionInDefaultContext",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "customFieldId",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "default" : "12345",
+          "format" : "int64"
+        }, {
+          "name" : "contextId",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "default" : "334",
+          "format" : "int64"
+        }, {
+          "name" : "optionId",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "default" : "123",
+          "format" : "int64"
+        }, {
+          "name" : "childOptionId",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "default" : "334",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/DeleteOk"
             }
           },
           "400" : {
