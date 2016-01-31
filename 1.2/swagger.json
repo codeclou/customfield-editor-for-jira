@@ -6,33 +6,48 @@
   },
   "basePath" : "/jira/rest/jiracustomfieldeditorplugin/1.2",
   "tags" : [ {
-    "name" : "user-custom-field-operations",
-    "description" : "User level operations on custom fields"
-  }, {
     "name" : "admin-custom-field-operations",
     "description" : "Admin level operations on custom field permissions"
+  }, {
+    "name" : "user-custom-field-operations",
+    "description" : "User level operations on custom fields"
   } ],
   "paths" : {
     "/admin/customfields" : {
       "get" : {
         "tags" : [ "admin-custom-field-operations" ],
         "summary" : "List all customfields [n1.2]",
-        "description" : "bla",
+        "description" : "List all available customfields.<br>Not all of them will be editable with the Customfield Editor Plugin. See User Guide for supported FieldTypes.<br>You need to be part of jira-administrators group to be able to use this Endpoint.<hr><u>Version History</u><ul><li><b>New in 1.2</b></li></ul> ",
         "operationId" : "getAllCustomfields",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "responses" : {
           "200" : {
-            "description" : "You get a list of ",
+            "description" : "You get a list of customFields.",
             "schema" : {
               "$ref" : "#/definitions/CustomFieldModel"
             }
           },
           "401" : {
-            "description" : "Unauthorized or not adminUser."
+            "description" : "Unauthorized (no user is authenticated).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "403" : {
+            "description" : "Permission Denied (insufficient rights on field).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "412" : {
+            "description" : "The custom field type is not on allowed types list. (customfield cannot be edited)",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
           },
           "500" : {
-            "description" : "Unexpected Error",
+            "description" : "RestError shows you generic errors that are more severe than ValidationErrors.",
             "schema" : {
               "$ref" : "#/definitions/RestError"
             }
@@ -44,7 +59,7 @@
       "get" : {
         "tags" : [ "admin-custom-field-operations" ],
         "summary" : "Get Permissions for Customfield [n1.2]",
-        "description" : "FOOBAR FOOBAR",
+        "description" : "You can get permissions of the specified customfield. Will return usernames and groupnames that have permission.<br>You need to be part of jira-administrators group to be able to use this Endpoint.<hr><u>Version History</u><ul><li><b>New in 1.2</b></li></ul> ",
         "operationId" : "getCustomfield",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
@@ -58,16 +73,31 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "You get a list of ",
+            "description" : "You get a permission-Object for the customField.",
             "schema" : {
               "$ref" : "#/definitions/CustomFieldPermissionModel"
             }
           },
           "401" : {
-            "description" : "Unauthorized or not adminUser."
+            "description" : "Unauthorized (no user is authenticated).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "403" : {
+            "description" : "Permission Denied (insufficient rights on field).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "412" : {
+            "description" : "The custom field type is not on allowed types list. (customfield cannot be edited)",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
           },
           "500" : {
-            "description" : "Unexpected Error",
+            "description" : "RestError shows you generic errors that are more severe than ValidationErrors.",
             "schema" : {
               "$ref" : "#/definitions/RestError"
             }
@@ -77,7 +107,7 @@
       "put" : {
         "tags" : [ "admin-custom-field-operations" ],
         "summary" : "Set Permissions on Customfield [n1.2]",
-        "description" : "bla",
+        "description" : "You can submit usernames or groupnames to give permissions on the specified customfield.<br><b>Notice:</b> Always provide the full list of usernames and groupnames! You cannot just add a username, what you submit will overwrite the previous values of <em>usernames</em> and <em>groupnames</em> fields.<br>You need to be part of jira-administrators group to be able to use this Endpoint.<hr><u>Version History</u><ul><li><b>New in 1.2</b></li></ul> ",
         "operationId" : "putCustomfield",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
@@ -98,10 +128,19 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "You get a list of "
+            "description" : "No content returned."
           },
           "401" : {
-            "description" : "Unauthorized or not adminUser."
+            "description" : "Unauthorized (no user is authenticated).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
+          },
+          "403" : {
+            "description" : "Permission Denied (insufficient rights on field).",
+            "schema" : {
+              "$ref" : "#/definitions/RestError"
+            }
           },
           "412" : {
             "description" : "The custom field type is not on allowed types list. (customfield cannot be edited)",
@@ -110,7 +149,7 @@
             }
           },
           "500" : {
-            "description" : "Unexpected Error",
+            "description" : "RestError shows you generic errors that are more severe than ValidationErrors.",
             "schema" : {
               "$ref" : "#/definitions/RestError"
             }
@@ -389,6 +428,7 @@
         }, {
           "in" : "body",
           "name" : "body",
+          "description" : "Model used to set the default value of a customfield. The default value differs by fieldType. <ul><li>A <strong>singleSelect/radioButtons</strong> fields defaultOption consists of an optionId (optionIds=null,childOptionId=null)</li><li>A <strong>cascadingSelect</strong> fields defaultOption consists of an optionId and a childOptionId (optionIds=null)</li><li>A <strong>multiSelect/multiCheckboxes</strong> fields defaultOptions consists of multiple optionIds (optionId=null,childOptionId=null)</li></ul>",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/SetDefaultValueModel"
@@ -494,7 +534,7 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "See: http://docs.oracle.com/javase/7/docs/api/java/text/Collator.html",
+          "description" : "SortModel specifies in which way to sort the options of a customfield.You can sort ascending or descending. The sorting will be locale dependant, so you need to specify a locale like en-US. You can specify an optional collator strength.",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/SortModel"
@@ -816,7 +856,7 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "See: http://docs.oracle.com/javase/7/docs/api/java/text/Collator.html",
+          "description" : "SortModel specifies in which way to sort the options of a customfield.You can sort ascending or descending. The sorting will be locale dependant, so you need to specify a locale like en-US. You can specify an optional collator strength.",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/SortModel"
@@ -1042,7 +1082,7 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "Object containing move instructions. You either set **position**=First or set **after**=optionIdToMoveAfter. Don't set both, position will be used!",
+          "description" : "RestfulTableMoveModel is used for drag-and-drop sorting options using the AUI Restfultable. It is advised to not use it. Use the SORT Endpoint instead or you might break the internal order sequence.",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/RestfulTableMoveModel"
@@ -1116,7 +1156,7 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "Object containing move instructions. You either set **position**=First or set **after**=optionIdToMoveAfter. Don't set both, position will be used!",
+          "description" : "RestfulTableMoveModel is used for drag-and-drop sorting options using the AUI Restfultable. It is advised to not use it. Use the SORT Endpoint instead or you might break the internal order sequence.",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/RestfulTableMoveModel"
@@ -1375,6 +1415,7 @@
         }, {
           "in" : "body",
           "name" : "body",
+          "description" : "Model used to set the default value of a customfield. The default value differs by fieldType. <ul><li>A <strong>singleSelect/radioButtons</strong> fields defaultOption consists of an optionId (optionIds=null,childOptionId=null)</li><li>A <strong>cascadingSelect</strong> fields defaultOption consists of an optionId and a childOptionId (optionIds=null)</li><li>A <strong>multiSelect/multiCheckboxes</strong> fields defaultOptions consists of multiple optionIds (optionId=null,childOptionId=null)</li></ul>",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/SetDefaultValueModel"
@@ -1494,7 +1535,7 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "See: http://docs.oracle.com/javase/7/docs/api/java/text/Collator.html",
+          "description" : "SortModel specifies in which way to sort the options of a customfield.You can sort ascending or descending. The sorting will be locale dependant, so you need to specify a locale like en-US. You can specify an optional collator strength.",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/SortModel"
@@ -1851,7 +1892,7 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "See: http://docs.oracle.com/javase/7/docs/api/java/text/Collator.html",
+          "description" : "SortModel specifies in which way to sort the options of a customfield.You can sort ascending or descending. The sorting will be locale dependant, so you need to specify a locale like en-US. You can specify an optional collator strength.",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/SortModel"
@@ -2098,7 +2139,7 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "Object containing move instructions. You either set **position**=First or set **after**=optionIdToMoveAfter. Don't set both, position will be used!",
+          "description" : "RestfulTableMoveModel is used for drag-and-drop sorting options using the AUI Restfultable. It is advised to not use it. Use the SORT Endpoint instead or you might break the internal order sequence.",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/RestfulTableMoveModel"
@@ -2179,7 +2220,7 @@
         }, {
           "in" : "body",
           "name" : "body",
-          "description" : "Object containing move instructions. You either set **position**=First or set **after**=optionIdToMoveAfter. Don't set both, position will be used!",
+          "description" : "RestfulTableMoveModel is used for drag-and-drop sorting options using the AUI Restfultable. It is advised to not use it. Use the SORT Endpoint instead or you might break the internal order sequence.",
           "required" : true,
           "schema" : {
             "$ref" : "#/definitions/RestfulTableMoveModel"
@@ -2308,9 +2349,11 @@
       "properties" : {
         "id" : {
           "type" : "integer",
-          "format" : "int64"
+          "format" : "int64",
+          "description" : "The ID of the just deleted object."
         }
-      }
+      },
+      "description" : "will return the id of the just deleted object."
     },
     "GetDefaultValueModel" : {
       "type" : "object",
@@ -2338,16 +2381,20 @@
       "properties" : {
         "statusCode" : {
           "type" : "integer",
-          "format" : "int32"
+          "format" : "int32",
+          "description" : "An integer HTTP status code. Mostly HTTP 500."
         },
         "subCode" : {
           "type" : "integer",
-          "format" : "int32"
+          "format" : "int32",
+          "description" : "An unique integer cep-status code to send in with bug reports."
         },
         "message" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "A human readable error message."
         }
       },
+      "description" : "RestError shows you generic errors that are more severe than ValidationErrors.",
       "xml" : {
         "name" : "status"
       }
@@ -2356,12 +2403,16 @@
       "type" : "object",
       "properties" : {
         "after" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "After must contain the optionId to move the option after. In form of \"/foo/bar/{optionid}\" which is provided that way by AUI Restfultable.You can provide just the optionId too."
         },
         "position" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Special Case to move an option to the beginning of the option List. Specify position=\"First\". (Notice: if after and position are defined together, after is ignored)",
+          "enum" : [ "First" ]
         }
-      }
+      },
+      "description" : "RestfulTableMoveModel is used for drag-and-drop sorting options using the AUI Restfultable. It is advised to not use it. Use the SORT Endpoint instead or you might break the internal order sequence."
     },
     "SetDefaultValueModel" : {
       "type" : "object",
@@ -2385,57 +2436,73 @@
           }
         }
       },
-      "description" : "class used to set the default value of a customfield"
+      "description" : "Model used to set the default value of a customfield. The default value differs by fieldType. <ul><li>A <strong>singleSelect/radioButtons</strong> fields defaultOption consists of an optionId (optionIds=null,childOptionId=null)</li><li>A <strong>cascadingSelect</strong> fields defaultOption consists of an optionId and a childOptionId (optionIds=null)</li><li>A <strong>multiSelect/multiCheckboxes</strong> fields defaultOptions consists of multiple optionIds (optionId=null,childOptionId=null)</li></ul>"
     },
     "SortModel" : {
       "type" : "object",
       "properties" : {
         "locale" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "<a href=\"http://docs.oracle.com/javase/7/docs/api/java/util/Locale.html\">IETF BCP 47 language tag string</a> in form of [a-zA-Z]+-[a-zA-Z]+",
+          "enum" : [ "de-DE", "en-US", "..." ]
         },
         "strength" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "<a href=\"https://docs.oracle.com/javase/7/docs/api/java/text/Collator.html\">Collator Strength</a> in form of [A-Z]+",
+          "enum" : [ "PRIMARY", "SECONDARY", "TERTIARY", "IDENTICAL" ]
         },
         "order" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "The sort order in form of [A-Z]+",
+          "enum" : [ "ASCENDING", "DESCENDING" ]
         }
-      }
+      },
+      "description" : "SortModel specifies in which way to sort the options of a customfield.You can sort ascending or descending. The sorting will be locale dependant, so you need to specify a locale like en-US. You can specify an optional collator strength."
     },
     "ValidationError" : {
       "type" : "object",
       "properties" : {
         "name" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "The name of the field or property which has a validation error."
         },
         "message" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "Human readable error message."
         },
         "exceptionName" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "The Exception name (optional)."
         }
-      }
+      },
+      "description" : "ValidationError gives you hints what field or property caused the validation error."
     },
     "ValidationErrors" : {
       "type" : "object",
       "properties" : {
         "message" : {
-          "type" : "string"
+          "type" : "string",
+          "description" : "A human readable error message."
         },
         "statusCode" : {
           "type" : "integer",
-          "format" : "int32"
+          "format" : "int32",
+          "description" : "An integer HTTP status code."
         },
         "subCode" : {
           "type" : "integer",
-          "format" : "int32"
+          "format" : "int32",
+          "description" : "An unique integer cep-status code to send in with bug reports."
         },
         "errors" : {
           "type" : "array",
+          "description" : "If there are errors that are specific to a certain property of a submitted model it will be listed here.",
           "items" : {
             "$ref" : "#/definitions/ValidationError"
           }
         }
-      }
+      },
+      "description" : "ValidationErrors provides one or more ValidationError-Objects which give you hints what caused validation errors."
     }
   }
 }
