@@ -4,7 +4,7 @@
 
 This is a reference implementation of a cli-client written in python for the [Customfield Editor Plugin](http://codeclou.io/redirect/r.php?r=lkmwyvgm) for Atlassian JIRA®.
 
-**The REST CLI Client does not intend to implement all available API features. It only shows demonstrates basic usage examples.**
+:exclamation: **The REST CLI Client does not intend to implement all available API features. It only demonstrates basic usage examples.**
  
 See the full documentation and usage on the [REST CLI Client page](http://codeclou.io/redirect/r.php?r=alxpzlvx).
 
