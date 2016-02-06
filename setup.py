@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='customfield_editor_plugin_client',
-      version='0.1',
+      version='1.2rc1',
       description='Python client for Customfield Editor Plugin for Atlassian JIRA®',
       url='https://github.com/codeclou/customfield-editor-plugin/tree/python-demo-client',
       author='codeclou.io',
@@ -10,7 +10,7 @@ setup(name='customfield_editor_plugin_client',
       packages=['customfield_editor_plugin_client'],
       install_requires=[
           'requests',
-          'pyCLI'
+          'argparse'
       ],
       zip_safe=False,
       entry_points = {
