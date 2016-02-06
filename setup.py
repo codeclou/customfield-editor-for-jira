@@ -10,5 +10,9 @@ setup(name='customfield_editor_plugin_client',
       packages=['customfield_editor_plugin_client'],
       install_requires=[
           'requests',
+          'pyCLI'
       ],
-      zip_safe=False)
+      zip_safe=False,
+      entry_points = {
+          'console_scripts': ['cep-client=customfield_editor_plugin_client.cli_client:main'],
+      })
