@@ -54,8 +54,8 @@ def main():
         print ('')
         print ('    list options:')
         print ('      $> cep-client -a userListOptions --customFieldId 10001 -url http://localhost:2990/jira/ -user admin -pass admin')
-        # $> cep-client -a adminGrantPermission --customFieldId 10100 --userList bob steve  -url http://localhost:2990/jira -user admin -pass admin
-        # (optional: --groupList)
+        print ('      OPTIONAL: --contextId specify if you want another context other than default context')
+
         sys.exit(1)
 
 
