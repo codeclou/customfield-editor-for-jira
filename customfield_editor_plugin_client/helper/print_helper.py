@@ -23,6 +23,9 @@ class PrintHelper:
     def step(self, text):
         print(colorama.Fore.CYAN + '\n> ' + text)
 
+    def headline(self, text):
+        print(colorama.Fore.MAGENTA + '\n# ' + text)
+
     def action(self, text):
         print(colorama.Fore.MAGENTA + '\n# Action: ' + text)
 

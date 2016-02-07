@@ -10,3 +10,11 @@ class UserOperations:
     def list_fields(self):
         response_json = self._api.get('/user/customfields')
         self._print.table(response_json)
+
+    def list_options(self, customfield_id, context_id):
+        if context_id:
+            response_json = self._api.get('/user/customfields/{0}/contexts/{1}/options'.format(customfield_id, context_id))
+        else:
+            response_json = self._api.get('/user/customfields/{0}/contexts/default/options'.format(customfield_id))
+
+        self._print.table(response_json)
