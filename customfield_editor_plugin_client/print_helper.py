@@ -5,13 +5,13 @@ class PrintHelper:
 
     def _success_prefix(self):
         """get success icon to print if system encoding is utf-8"""
-        if sys.stdout.encoding == 'utf-8':
+        if sys.stdout.encoding == 'UTF-8':
             return u'✓ '
         return 'SUCCESS '
 
     def _error_prefix(self):
         """get success icon to print if system encoding is utf-8"""
-        if sys.stdout.encoding == 'utf-8':
+        if sys.stdout.encoding == 'UTF-8':
             return u'❌ '
         return 'ERROR '
 
