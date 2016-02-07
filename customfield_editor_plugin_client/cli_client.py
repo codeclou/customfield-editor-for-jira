@@ -12,8 +12,7 @@ def main():
     colorama.init(autoreset=True)
     printHelper = PrintHelper()
 
-    print(colorama.Fore.CYAN + '\n~~ REST API Client for Customfield Editor Plugin ~~')
-    #print('shell encoding: ' + sys.stdout.encoding + '\n')
+    print(colorama.Fore.CYAN + '\n~~ REST API Client for Customfield Editor Plugin ~~ v1.2rc1')
 
     parser = argparse.ArgumentParser(description='Customfield Editor Plugin REST API CLI Client.')
     parser.add_argument("-cid", "--customFieldId", type=int, help='The ID of the custom field.')
@@ -57,3 +56,5 @@ def main():
         printHelper.error('There seems to a be problem with your request.')
         print (ex)
         sys.exit(1)
+
+    print ('\n')

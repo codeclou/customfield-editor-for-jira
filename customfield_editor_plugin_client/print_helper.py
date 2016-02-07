@@ -20,5 +20,4 @@ class PrintHelper:
         print(colorama.Fore.RED + self._error_prefix() + text)
 
     def step(self, text):
-        print('\n')
-        print(colorama.Fore.CYAN + '> ' + text)
+        print(colorama.Fore.CYAN + '\n> ' + text)
