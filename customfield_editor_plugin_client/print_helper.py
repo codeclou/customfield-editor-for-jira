@@ -10,7 +10,7 @@ class PrintHelper:
 
     def _error_prefix(self):
         if sys.stdout.encoding == 'UTF-8':
-            return u' ❌ '
+            return u' ✗ '
         return ' ERROR '
 
     def success(self, text):
