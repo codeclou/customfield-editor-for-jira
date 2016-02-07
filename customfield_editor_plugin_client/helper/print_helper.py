@@ -23,5 +23,8 @@ class PrintHelper:
     def step(self, text):
         print(colorama.Fore.CYAN + '\n> ' + text)
 
+    def action(self, text):
+        print(colorama.Fore.MAGENTA + '\n# Action: ' + text)
+
     def table(self, json):
         print(textwrap.indent(tabulate.tabulate(json, headers="keys"), '  '))
