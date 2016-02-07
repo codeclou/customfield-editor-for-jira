@@ -22,6 +22,16 @@ class ApiHelper:
         except ValueError as ex:
             return {}
 
+    def put(self, urlpart, payload):
+        request_url = self._rest_url(urlpart)
+        self.printHelper.step('PUT ' + request_url)
+        response = requests.put(request_url, json=payload, auth=(self.userInput.authUserName, self.userInput.authPassword))
+        self._handle_response_errors(response)
+        try:
+            return response.json()
+        except ValueError as ex:
+            return {}
+
     def get(self, urlpart):
         request_url = self._rest_base_url() + urlpart
         self.printHelper.step('GET ' + request_url)

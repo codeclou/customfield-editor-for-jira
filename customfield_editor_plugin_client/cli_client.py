@@ -2,11 +2,12 @@ import argparse
 import sys
 import colorama
 import requests
-from .api_helper import ApiHelper
-from .api_helper_exception import ApiHelperException
-from .user_input import UserInput
-from .user_input_exception import UserInputException
-from .print_helper import PrintHelper
+from .helper.api_helper import ApiHelper
+from .helper.api_helper_exception import ApiHelperException
+from .helper.print_helper import PrintHelper
+from .model.user_input import UserInput
+from .model.user_input_exception import UserInputException
+from .modules.admin_operations import AdminOperations
 
 def main():
     colorama.init(autoreset=True)
@@ -16,7 +17,9 @@ def main():
 
     parser = argparse.ArgumentParser(description='Customfield Editor Plugin REST API CLI Client.')
     parser.add_argument("-cid", "--customFieldId", type=int, help='The ID of the custom field.')
-    parser.add_argument("-a", "--action", help='Which action to execute.', choices=['adminListFields', 'insertOptions','deleteOption'], required=True)
+    parser.add_argument("-ulist", "--userList", nargs='+', help='space separated user names to grant permission')
+    parser.add_argument("-glist", "--groupList", nargs='+', help='space separated group names to grant permission')
+    parser.add_argument("-a", "--action", help='Which action to execute.', choices=['adminListFields', 'adminGrantPermission'], required=True)
     parser.add_argument("-url", "--baseUrl", help='baseUrl to JIRA instance e.g. http://server:port/jira/', required=True)
     parser.add_argument("-user", "--authUsername", help='username for basic auth.', required=True)
     parser.add_argument("-pass", "--authPassword", help='password for basic auth.', required=True)
@@ -43,14 +46,18 @@ def main():
     printHelper.success('ApiHelper initialized.')
 
 
+    adminOperations = AdminOperations(apiHelper)
 
     try:
 
-
         # $> cep-client -a adminListFields -url http://localhost:2990/jira/ -user admin -pass admin
         if args.action == 'adminListFields':
-            response_json = apiHelper.get('/admin/customfields')
-            printHelper.table(response_json)
+            adminOperations.list_fields()
+
+        #> cep-client -a adminGrantPermission --customFieldId 10100 --userList bob steve  -url http://localhost:2990/jira -user admin -pass admin
+        # (optional: --groupList)
+        if args.action == 'adminGrantPermission':
+            adminOperations.grant_permission(args.customFieldId, args.userList, args.groupList)
 
 
     except requests.ConnectionError as ex:

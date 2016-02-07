@@ -7,7 +7,12 @@ setup(name='customfield_editor_plugin_client',
       author='codeclou.io',
       author_email='info@codeclou.io',
       license='MIT',
-      packages=['customfield_editor_plugin_client'],
+      packages=[
+          'customfield_editor_plugin_client',
+          'customfield_editor_plugin_client.helper',
+          'customfield_editor_plugin_client.model',
+          'customfield_editor_plugin_client.modules'
+      ],
       install_requires=[
           'requests',
           'argparse',
