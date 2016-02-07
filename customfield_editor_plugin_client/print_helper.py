@@ -1,6 +1,7 @@
 import sys
 import colorama
-
+import textwrap
+import tabulate
 class PrintHelper:
 
     def _success_prefix(self):
@@ -21,3 +22,6 @@ class PrintHelper:
 
     def step(self, text):
         print(colorama.Fore.CYAN + '\n> ' + text)
+
+    def table(self, json):
+        print(textwrap.indent(tabulate.tabulate(json, headers="keys"), '  '))

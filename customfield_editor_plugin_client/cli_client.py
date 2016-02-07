@@ -49,7 +49,8 @@ def main():
 
         # $> cep-client -a adminListFields -url http://localhost:2990/jira/ -user admin -pass admin
         if args.action == 'adminListFields':
-            apiHelper.get('/admin/customfields')
+            response_json = apiHelper.get('/admin/customfields')
+            printHelper.table(response_json)
 
 
     except requests.ConnectionError as ex:
