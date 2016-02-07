@@ -1,4 +1,6 @@
-# REST CLI Client 
+# REST API CLI Client 
+
+![](https://codeclou.github.io/customfield-editor-plugin/data/cep-logo-32.png)
 
 ## Customfield Editor Plugin for Atlassian JIRA®
 
