@@ -19,6 +19,7 @@ def main():
     #    sys.stderr = codecs.getwriter('cp850')(sys.stderr.buffer, 'strict')
 
     print(colorama.Fore.CYAN + '\n~~ REST API Client for Customfield Editor Plugin ~~\n')
+    print('shell encoding: ' + sys.stdout.encoding + '\n')
 
     parser = argparse.ArgumentParser(description='Customfield Editor Plugin REST API CLI Client.')
     parser.add_argument("-cid", "--customFieldId", type=int, help='The ID of the custom field.')
