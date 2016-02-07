@@ -1,7 +1,7 @@
 import argparse
 import sys
 import colorama
-import codecs
+import requests
 from .api_helper import ApiHelper
 from .api_helper_exception import ApiHelperException
 from .user_input import UserInput
@@ -11,12 +11,6 @@ from .print_helper import PrintHelper
 def main():
     colorama.init(autoreset=True)
     printHelper = PrintHelper()
-
-
-    #if sys.stdout.encoding != 'cp850':
-    #    sys.stdout = codecs.getwriter('cp850')(sys.stdout.buffer, 'strict')
-    #if sys.stderr.encoding != 'cp850':
-    #    sys.stderr = codecs.getwriter('cp850')(sys.stderr.buffer, 'strict')
 
     print(colorama.Fore.CYAN + '\n~~ REST API Client for Customfield Editor Plugin ~~\n')
     print('shell encoding: ' + sys.stdout.encoding + '\n')
@@ -51,8 +45,11 @@ def main():
 
 
 
-    # $> cep-client -a adminListFields -url http://localhost:2990/jira/ -user admin -pass admin
-    if args.action == 'adminListFields':
-        apiHelper.get('/admin/customfields')
-
-
+    try:
+        # $> cep-client -a adminListFields -url http://localhost:2990/jira/ -user admin -pass admin
+        if args.action == 'adminListFields':
+            apiHelper.get('/admin/customfields')
+    except requests.ConnectionError as ex:
+        printHelper.error('There seems to a be problem with your request.')
+        print (ex)
+        sys.exit(1)

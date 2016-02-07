@@ -9,10 +9,13 @@ class ApiHelper:
     def __init__(self, userInput):
         self.printHelper = PrintHelper()
         self.userInput = userInput
-        healthUrl = self.restBaseUrl() + '/health/status'
-        r = requests.get(healthUrl)
-        if r.status_code != 200:
-            raise ApiHelperException('baseUrl does not lead to running JIRA with installed Customfield Editor Plugin. Health check failed with HTTP {0} for URL: {1}'.format(r.status_code, healthUrl))
+        health_url = self.restBaseUrl() + '/health/status'
+        try:
+            r = requests.get(health_url)
+            if r.status_code != 200:
+                raise ApiHelperException('baseUrl does not lead to running JIRA with installed Customfield Editor Plugin. Health check failed with HTTP {0} for URL: {1}'.format(r.status_code, health_url))
+        except requests.ConnectionError as ex:
+            raise ApiHelperException(ex)
 
     def restBaseUrl(self):
         return self.userInput.baseUrl + 'rest/jiracustomfieldeditorplugin/1.2'
