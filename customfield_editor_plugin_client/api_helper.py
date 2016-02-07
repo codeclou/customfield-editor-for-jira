@@ -1,5 +1,5 @@
 import requests
-import pprint
+import textwrap
 import tabulate
 from .api_helper_exception import ApiHelperException
 from .print_helper import PrintHelper
@@ -29,13 +29,12 @@ class ApiHelper:
             print (r.status_code)
 
     def get(self, urlpart):
-        pp = pprint.PrettyPrinter(width=41, compact=True)
         url = self.restBaseUrl() + urlpart
-        print ('GET ' + url)
+        self.printHelper.step('GET ' + url)
         r = requests.get(url, auth=(self.userInput.authUserName, self.userInput.authPassword))
         if r.status_code == 200:
             self.printHelper.success('Request returns 200')
-            print (tabulate.tabulate(r.json(), headers="keys"))
+            print(textwrap.indent(tabulate.tabulate(r.json(), headers="keys"), '  '))
             #pp.pprint(r.json())
         else:
             print ('ERROR')

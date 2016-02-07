@@ -12,8 +12,8 @@ def main():
     colorama.init(autoreset=True)
     printHelper = PrintHelper()
 
-    print(colorama.Fore.CYAN + '\n~~ REST API Client for Customfield Editor Plugin ~~\n')
-    print('shell encoding: ' + sys.stdout.encoding + '\n')
+    print(colorama.Fore.CYAN + '\n~~ REST API Client for Customfield Editor Plugin ~~')
+    #print('shell encoding: ' + sys.stdout.encoding + '\n')
 
     parser = argparse.ArgumentParser(description='Customfield Editor Plugin REST API CLI Client.')
     parser.add_argument("-cid", "--customFieldId", type=int, help='The ID of the custom field.')
@@ -24,7 +24,7 @@ def main():
     args = parser.parse_args()
 
 
-
+    printHelper.step('initializing')
     try:
         userInput = UserInput(args.baseUrl, args.authUsername, args.authPassword)
     except UserInputException as ex:
@@ -46,9 +46,13 @@ def main():
 
 
     try:
+
+
         # $> cep-client -a adminListFields -url http://localhost:2990/jira/ -user admin -pass admin
         if args.action == 'adminListFields':
             apiHelper.get('/admin/customfields')
+
+
     except requests.ConnectionError as ex:
         printHelper.error('There seems to a be problem with your request.')
         print (ex)
