@@ -1,15 +1,21 @@
 import requests
 import pprint
+from .api_helper_exception import ApiHelperException
 
 class ApiHelper:
 
-    def __init__(self, baseurl, username, password):
-        self.baseUrl = baseurl + 'rest/jiracustomfieldeditorplugin/1.2'
-        self.authUserName = username
-        self.authPassword = password
+    def __init__(self, userInput):
+        self.userInput = userInput
+        healthUrl = self.restBaseUrl() + '/health/status'
+        r = requests.get(healthUrl)
+        if r.status_code != 200:
+            raise ApiHelperException('baseUrl does not lead to running JIRA with installed Customfield Editor Plugin. Health check failed with HTTP {0} for URL: {1}'.format(r.status_code, healthUrl))
+
+    def restBaseUrl(self):
+        return self.userInput.baseUrl + 'rest/jiracustomfieldeditorplugin/1.2'
 
     def post(self, urlpart, payload):
-        r = requests.post(self.baseUrl + urlpart, json=payload, auth=(self.authUserName, self.authPassword))
+        r = requests.post(self.restBaseUrl() + urlpart, json=payload, auth=(self.userInput.authUserName, self.userInput.authPassword))
         if r.status_code == 200:
             print ('SUCCESS')
         else:
@@ -18,9 +24,9 @@ class ApiHelper:
 
     def get(self, urlpart):
         pp = pprint.PrettyPrinter(width=41, compact=True)
-        url = self.baseUrl + urlpart
+        url = self.restBaseUrl() + urlpart
         print ('GET ' + url)
-        r = requests.get(url, auth=(self.authUserName, self.authPassword))
+        r = requests.get(url, auth=(self.userInput.authUserName, self.userInput.authPassword))
         if r.status_code == 200:
             print ('SUCCESS')
             pp.pprint(r.json())

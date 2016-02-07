@@ -10,7 +10,9 @@ setup(name='customfield_editor_plugin_client',
       packages=['customfield_editor_plugin_client'],
       install_requires=[
           'requests',
-          'argparse'
+          'argparse',
+          'validators',
+          'colorama'
       ],
       zip_safe=False,
       entry_points = {

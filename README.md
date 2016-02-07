@@ -25,5 +25,11 @@ $> python setup.py install
 Now you can run the client with:
 
 ```
-$> cep-client
+$> cep-client -h
+```
+
+Example: List fields as admin user
+
+```
+cep-client -a adminListFields -url http://localhost:2990/jira -user admin -pass admin
 ```
