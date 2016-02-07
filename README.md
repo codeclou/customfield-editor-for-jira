@@ -33,3 +33,7 @@ Example: List fields as admin user
 ```
 cep-client -a adminListFields -url http://localhost:2990/jira -user admin -pass admin
 ```
+
+### Screenshot
+
+![](https://codeclou.github.io/customfield-editor-plugin/doc/cep-client-screen-01.png)
