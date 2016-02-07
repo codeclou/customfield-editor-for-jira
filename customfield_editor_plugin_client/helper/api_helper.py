@@ -66,6 +66,9 @@ class ApiHelper:
         elif response.status_code == 204:
             self.printHelper.success('request successful')
             return
+        elif response.status_code == 400:
+            self.printHelper.error(response.json())
+            raise ApiHelperException(401)
         elif response.status_code == 401:
             self.printHelper.error('UNAUTHORIZED (401). Authorization failed (wrong or no credentials).')
             raise ApiHelperException(401)

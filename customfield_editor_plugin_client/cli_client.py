@@ -23,7 +23,7 @@ def main():
     #
     parser = argparse.ArgumentParser(description='Customfield Editor Plugin REST API CLI Client.')
 
-    parser.add_argument("-a", "--action", help='Which action to execute.', choices=['adminListFields', 'adminGrantPermission', 'userListFields', 'userListOptions'])
+    parser.add_argument("-a", "--action", help='Which action to execute.', choices=['adminListFields', 'adminGrantPermission', 'userListFields', 'userListOptions', 'userInsertOptions'])
     parser.add_argument("-url", "--baseUrl", help='baseUrl to JIRA instance e.g. http://server:port/jira/')
     parser.add_argument("-user", "--authUsername", help='username for basic auth.')
     parser.add_argument("-pass", "--authPassword", help='password for basic auth.')
@@ -35,6 +35,7 @@ def main():
     parser.add_argument("-ctx", "--contextId", type=int, help='The ID of the custom field context.')
     parser.add_argument("-ulist", "--userList", nargs='+', help='space separated user names to grant permission')
     parser.add_argument("-glist", "--groupList", nargs='+', help='space separated group names to grant permission')
+    parser.add_argument("-f", "--payloadFile", help='Payload JSON file.')
 
     args = parser.parse_args()
     if not args.action:
@@ -55,6 +56,10 @@ def main():
         print ('    list options:')
         print ('      $> cep-client -a userListOptions --customFieldId 10001 -url http://localhost:2990/jira/ -user admin -pass admin')
         print ('      OPTIONAL: --contextId specify if you want another context other than default context')
+        print ('')
+        print ('    insert options:')
+        print ('      $> cep-client -a userInsertOptions --customFieldId 10001 -f ./test-data/options-to-insert.json -url http://localhost:2990/jira/ -user admin -pass admin')
+        print ('      FILE FORMAT: https://github.com/codeclou/customfield-editor-plugin/tree/cep-client/test-data/options-to-insert.json ')
 
         sys.exit(1)
 
@@ -98,8 +103,6 @@ def main():
         #
         if args.action == 'adminListFields':
             adminOperations.list_fields()
-
-
         if args.action == 'adminGrantPermission':
             adminOperations.grant_permission(args.customFieldId, args.userList, args.groupList)
 
@@ -109,9 +112,15 @@ def main():
         #
         if args.action == 'userListFields':
             userOperations.list_fields()
-
         if args.action == 'userListOptions':
             userOperations.list_options(args.customFieldId, args.contextId)
+        if args.action == 'userInsertOptions':
+            try:
+                with open(args.payloadFile) as payloadFile:
+                    userOperations.insert_options(args.customFieldId, args.contextId, payloadFile)
+            except FileNotFoundError as ex:
+                printHelper.error('payloadFile not found: {0}'.format(args.payloadFile))
+                raise ApiHelperException('payloadFile not found')
 
 
     except requests.ConnectionError as ex:
