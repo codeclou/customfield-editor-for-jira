@@ -17,6 +17,10 @@ class AdminOperations:
         print ('  permissions BEFORE: ')
         self._print.table(permissions)
         print ('')
+        if not hasattr(permissions, 'userlist'):
+            permissions['userlist'] = []
+        if not hasattr(permissions, 'grouplist'):
+            permissions['grouplist'] = []
 
         # (2) join current permission lists with new userlist and grouplist
         if userlist and len(userlist) > 0:
