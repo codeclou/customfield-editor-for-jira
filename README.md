@@ -24,10 +24,10 @@ cd into dir where `setup.py` resides
 $> python setup.py install
 ```
 
-Now you can run the client with:
+Now you can run the client and display usage
 
 ```
-$> cep-client -h
+$> cep-client
 ```
 
 Example: List fields as admin user
