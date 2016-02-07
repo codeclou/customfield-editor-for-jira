@@ -12,7 +12,8 @@ setup(name='customfield_editor_plugin_client',
           'requests',
           'argparse',
           'validators',
-          'colorama'
+          'colorama',
+          'tabulate'
       ],
       zip_safe=False,
       entry_points = {

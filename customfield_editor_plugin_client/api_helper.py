@@ -1,10 +1,13 @@
 import requests
 import pprint
+import tabulate
 from .api_helper_exception import ApiHelperException
+from .print_helper import PrintHelper
 
 class ApiHelper:
 
     def __init__(self, userInput):
+        self.printHelper = PrintHelper()
         self.userInput = userInput
         healthUrl = self.restBaseUrl() + '/health/status'
         r = requests.get(healthUrl)
@@ -28,8 +31,9 @@ class ApiHelper:
         print ('GET ' + url)
         r = requests.get(url, auth=(self.userInput.authUserName, self.userInput.authPassword))
         if r.status_code == 200:
-            print ('SUCCESS')
-            pp.pprint(r.json())
+            self.printHelper.success('Request returns 200')
+            print (tabulate.tabulate(r.json(), headers="keys"))
+            #pp.pprint(r.json())
         else:
             print ('ERROR')
             print (r.status_code)
