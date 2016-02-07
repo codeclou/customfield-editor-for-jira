@@ -54,8 +54,15 @@ def main():
 
 
     except requests.ConnectionError as ex:
-        printHelper.error('There seems to a be problem with your request.')
+        print ('')
+        printHelper.error('There seemed to a be problem with your request. Check errors above. EXIT')
         print (ex)
         sys.exit(1)
+    except ApiHelperException as ex:
+        print ('')
+        printHelper.error('There seemed to a be problem with your request. Check errors above. EXIT')
+        sys.exit(1)
+
 
     print ('\n')
+    printHelper.success('EXIT gracefully')
