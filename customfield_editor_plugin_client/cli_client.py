@@ -3,7 +3,8 @@ import sys
 import colorama
 import requests
 from .helper.api_helper import ApiHelper
-from .helper.api_helper_exception import ApiHelperException
+from .helper.api_helper_exceptions import ApiHelperException
+from .helper.api_helper_exceptions import ValidationErrorsException
 from .helper.print_helper import PrintHelper
 from .model.user_input import UserInput
 from .model.user_input_exception import UserInputException
@@ -119,7 +120,7 @@ def main():
                 with open(args.payloadFile) as payloadFile:
                     userOperations.insert_options(args.customFieldId, args.contextId, payloadFile)
             except FileNotFoundError as ex:
-                printHelper.error('payloadFile not found: {0}'.format(args.payloadFile))
+                printHelper.error('payloadFile not found')
                 raise ApiHelperException('payloadFile not found')
 
 
@@ -129,7 +130,7 @@ def main():
         print (ex)
         sys.exit(1)
     except ApiHelperException as ex:
-        print ('')
+        printHelper.pretty(ex.args[0])
         printHelper.error('There seemed to a be problem with your request. Check errors above. EXIT')
         sys.exit(1)
 

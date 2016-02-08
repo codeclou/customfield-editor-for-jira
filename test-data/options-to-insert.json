@@ -1,12 +1,12 @@
 [
   {
-    "optionvalue" : "windows"
+    "optionvalue" : "windows7"
   },
   {
-    "optionvalue" : "linux"
+    "optionvalue" : "linux7"
   },
   {
-    "optionvalue" : "mac",
-    "default": true
+    "optionvalue" : "mac7",
+    "default": "true"
   }
 ]

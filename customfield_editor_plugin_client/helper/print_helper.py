@@ -2,6 +2,8 @@ import sys
 import colorama
 import textwrap
 import tabulate
+import pprint
+
 class PrintHelper:
 
     def _success_prefix(self):
@@ -29,5 +31,13 @@ class PrintHelper:
     def action(self, text):
         print(colorama.Fore.MAGENTA + '\n# Action: ' + text)
 
+    def warn(self, text):
+        print(colorama.Fore.YELLOW + '  > ' + text)
+
     def table(self, json):
         print(textwrap.indent(tabulate.tabulate(json, headers="keys"), '  '))
+
+    def pretty(self, json):
+        self._pp = pprint.PrettyPrinter()
+        self._pp.pprint(json)
+        #print(textwrap.indent(, '  '))

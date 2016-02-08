@@ -1,7 +1,9 @@
 import requests
 import textwrap
 import tabulate
-from .api_helper_exception import ApiHelperException
+from .api_helper_exceptions import ApiHelperException
+from .api_helper_exceptions import ValidationErrorsException
+
 from .print_helper import PrintHelper
 
 class ApiHelper:
@@ -15,22 +17,30 @@ class ApiHelper:
     def post(self, urlpart, payload):
         request_url = self._rest_url(urlpart)
         self.printHelper.step('POST ' + request_url)
-        response = requests.post(request_url, json=payload, auth=(self.userInput.authUserName, self.userInput.authPassword))
-        self._handle_response_errors(response)
         try:
-            return response.json()
-        except ValueError as ex:
-            return {}
+            response = requests.post(request_url, json=payload, auth=(self.userInput.authUserName, self.userInput.authPassword))
+            self._handle_response_errors(response)
+            try:
+                return response.json()
+            except ValueError as ex:
+                return {}
+        except ValidationErrorsException as ex:
+            self.printHelper.warn('Validation Errors')
+            self.printHelper.table(ex.args[0]['errors'])
 
     def put(self, urlpart, payload):
         request_url = self._rest_url(urlpart)
         self.printHelper.step('PUT ' + request_url)
-        response = requests.put(request_url, json=payload, auth=(self.userInput.authUserName, self.userInput.authPassword))
-        self._handle_response_errors(response)
         try:
-            return response.json()
-        except ValueError as ex:
-            return {}
+            response = requests.put(request_url, json=payload, auth=(self.userInput.authUserName, self.userInput.authPassword))
+            self._handle_response_errors(response)
+            try:
+                return response.json()
+            except ValueError as ex:
+                return {}
+        except ValidationErrorsException as ex:
+            self.printHelper.warn('Validation Errors')
+            self.printHelper.table(ex.args[0]['errors'])
 
     def get(self, urlpart):
         request_url = self._rest_base_url() + urlpart
@@ -61,20 +71,14 @@ class ApiHelper:
 
     def _handle_response_errors(self, response):
         if response.status_code == 200:
-            self.printHelper.success('request successful')
             return
         elif response.status_code == 204:
-            self.printHelper.success('request successful')
             return
         elif response.status_code == 400:
-            self.printHelper.error(response.json())
-            raise ApiHelperException(401)
+            raise ValidationErrorsException(response.json())
         elif response.status_code == 401:
-            self.printHelper.error('UNAUTHORIZED (401). Authorization failed (wrong or no credentials).')
-            raise ApiHelperException(401)
+            raise ApiHelperException('UNAUTHORIZED (401). Authorization failed (wrong or no credentials).')
         elif response.status_code == 403:
-            self.printHelper.error('FORBIDDEN (403). Insufficient rights - OR - too many failed login attempts. (Log into JIRA in the browser to solve CAPTCHA).')
-            raise ApiHelperException(403)
+            raise ApiHelperException('FORBIDDEN (403). Insufficient rights - OR - too many failed login attempts. (Log into JIRA in the browser to solve CAPTCHA).')
         else:
-            self.printHelper.error('request failed with HTTP {0}'.format(response.status_code))
-            raise ApiHelperException(response.status_code)
+            raise ApiHelperException('request failed with HTTP {0}'.format(response.status_code))
