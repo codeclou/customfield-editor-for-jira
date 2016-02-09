@@ -131,6 +131,8 @@ def main():
         sys.exit(1)
     except ApiHelperException as ex:
         printHelper.pretty(ex.args[0])
+        #if 'details' in ex:
+        #    printHelper.pretty(ex.details)
         printHelper.error('There seemed to a be problem with your request. Check errors above. EXIT')
         sys.exit(1)
 

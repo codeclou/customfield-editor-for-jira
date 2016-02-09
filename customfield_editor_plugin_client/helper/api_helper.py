@@ -81,4 +81,7 @@ class ApiHelper:
         elif response.status_code == 403:
             raise ApiHelperException('FORBIDDEN (403). Insufficient rights - OR - too many failed login attempts. (Log into JIRA in the browser to solve CAPTCHA).')
         else:
-            raise ApiHelperException('request failed with HTTP {0}'.format(response.status_code))
+            ex = ApiHelperException('request failed with HTTP {0}'.format(response.status_code))
+            self.printHelper.pretty(response)
+            ex.details = response.json()
+            raise ex

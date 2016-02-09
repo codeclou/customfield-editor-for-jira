@@ -38,7 +38,7 @@ class UserOperations:
             if created_option and 'id' in created_option:
                 self._print.pretty(created_option)
                 if 'default' in option:
-                    self._api.post('/user/customfields/{0}/contexts/{1}/options/default'.format(customfield_id, context_infix),
+                    self._api.put('/user/customfields/{0}/contexts/{1}/options/default'.format(customfield_id, context_infix),
                                 {
                                     "optionId": created_option['id']
                                 })

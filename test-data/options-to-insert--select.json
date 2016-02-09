@@ -1,0 +1,12 @@
+[
+  {
+    "optionvalue" : "windows"
+  },
+  {
+    "optionvalue" : "linux"
+  },
+  {
+    "optionvalue" : "mac",
+    "default": "true"
+  }
+]
