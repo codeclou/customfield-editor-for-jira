@@ -62,6 +62,9 @@ def main():
         print ('    insert options:')
         print ('      $> cep-client -a userInsertOptions --customFieldId 10001 -f ./test-data/options-to-insert.json -url http://localhost:2990/jira/ -user admin -pass admin')
         print ('      FILE FORMAT: https://github.com/codeclou/customfield-editor-plugin/tree/cep-client/test-data/options-to-insert.json ')
+        print ('')
+        print ('    sort options:')
+        print ('      $> cep-client -a userSortOptions --customFieldId 10001 --order ASCENDING -url http://localhost:2990/jira/ -user admin -pass admin')
 
         sys.exit(1)
 
