@@ -46,6 +46,16 @@ class UserInput:
         if cli_args.action == 'userListOptions':
             self._validate_customfield_id(cli_args.customFieldId)
 
+        if cli_args.action == 'userInsertOptions':
+            self._validate_customfield_id(cli_args.customFieldId)
+            if not cli_args.payloadFile:
+                raise UserInputException('payloadFile needs to be specified.')
+
+        if cli_args.action == 'userSortOptions':
+            self._validate_customfield_id(cli_args.customFieldId)
+            if not cli_args.order:
+                raise UserInputException('order needs to be specified.')
+
     def _validate_customfield_id(self, id):
         if id <= 0:
             raise UserInputException('customFieldId needs to be positive integer.')

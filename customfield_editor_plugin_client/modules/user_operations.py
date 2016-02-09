@@ -43,5 +43,14 @@ class UserOperations:
                                     "optionId": created_option['id']
                                 })
 
+    def sort_options(self, customfield_id, context_id, order):
+        if context_id:
+            context_infix = context_id
+        else:
+            context_infix = 'default'
 
-
+        self._api.put('/user/customfields/{0}/contexts/{1}/options/sort'.format(customfield_id, context_infix),
+                                        {
+                                            "order": order,
+                                            "locale": "de-DE"
+                                        })

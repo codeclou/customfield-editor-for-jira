@@ -24,7 +24,7 @@ def main():
     #
     parser = argparse.ArgumentParser(description='Customfield Editor Plugin REST API CLI Client.')
 
-    parser.add_argument("-a", "--action", help='Which action to execute.', choices=['adminListFields', 'adminGrantPermission', 'userListFields', 'userListOptions', 'userInsertOptions'])
+    parser.add_argument("-a", "--action", help='Which action to execute.', choices=['adminListFields', 'adminGrantPermission', 'userListFields', 'userListOptions', 'userInsertOptions', 'userSortOptions'])
     parser.add_argument("-url", "--baseUrl", help='baseUrl to JIRA instance e.g. http://server:port/jira/')
     parser.add_argument("-user", "--authUsername", help='username for basic auth.')
     parser.add_argument("-pass", "--authPassword", help='password for basic auth.')
@@ -37,6 +37,7 @@ def main():
     parser.add_argument("-ulist", "--userList", nargs='+', help='space separated user names to grant permission')
     parser.add_argument("-glist", "--groupList", nargs='+', help='space separated group names to grant permission')
     parser.add_argument("-f", "--payloadFile", help='Payload JSON file.')
+    parser.add_argument("-o", "--order", help='The sort order.', choices=['ASCENDING', 'DESCENDING'])
 
     args = parser.parse_args()
     if not args.action:
@@ -122,6 +123,9 @@ def main():
             except FileNotFoundError as ex:
                 printHelper.error('payloadFile not found')
                 raise ApiHelperException('payloadFile not found')
+        if args.action == 'userSortOptions':
+            userOperations.sort_options(args.customFieldId, args.contextId, args.order)
+
 
 
     except requests.ConnectionError as ex:
