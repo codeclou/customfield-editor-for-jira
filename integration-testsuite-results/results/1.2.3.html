@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>1.2.3</title>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/testresult.css" />
+    <link rel="shortcut icon" href="../data/cep-logo-32.png" type="image/png" />
+    <link rel="icon" href="../data/cep-logo-32.png" type="image/png" />
+</head>
+
+<body>
+
+<header>
+    <h2 class="cep-headline-primary">Customfield Editor Plugin</h2>
+    <span class="cep-headline-secondary">REST API v1.2.3 Integration Testsuite Results</span>
+</header>
+<div class="cep-baselayout-body">
+    <main class="cep-baselayout-content">
+
+        <div class="cep-testsuite-header">
+            <span class="cep-label-success">10.3 sec</span>
+            <span class="cep-label-success">114 tests</span>
+            <span class="cep-label-success">0 failures</span>
+        </div>
+
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:56</span>
+                <span class="cep-label-success">0.23 sec</span>
+                <span class="cep-label-success">11 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Permission Set/Get Tests</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.04 sec</span>
+                <h4>it should be possible for admin to give bob permission on field &quot;singleselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to get a list with bob as permission holder on field &quot;singleselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to give bob permission on field &quot;singleselectWithContexts&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for admin to give bob permission on field &quot;multicheckboxesWithContexts&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for admin to give bob permission on field &quot;cascadingselectWithContexts&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for admin to give steve permission on field &quot;cascadingselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for admin to get a list with steve as permission holder on field &quot;cascadingselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to give jira-administrators group permission on field &quot;cascadingselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to get a list with steve and jira-administrators group as permission holder on field &quot;cascadingselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for bob to list permissions of field &quot;cascadingselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for bob to set permissions on field &quot;cascadingselect&quot;</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:56</span>
+                <span class="cep-label-success">0.05 sec</span>
+                <span class="cep-label-success">2 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>List Customfields Tests</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.03 sec</span>
+                <h4>it should be possible for admin to list all customfields</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for bob to list all customfields</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:56</span>
+                <span class="cep-label-success">0.13 sec</span>
+                <span class="cep-label-success">7 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Context Security</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to list all contexts of singleselectForContextSecurityTest field</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should not be possible for cat to list all contexts of singleselectForContextSecurityTest field</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for admin to get contextSecurity for singleselectForContextSecurityTest field</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for cat to get contextSecurity for singleselectForContextSecurityTest field</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to give cat and kater context specific permission on field &quot;singleselectForContextSecurityTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for cat to give cat and kater context specific permission on field &quot;singleselectForContextSecurityTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for admin to get contextSecurity for cat and kater of singleselectForContextSecurityTest field</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:56</span>
+                <span class="cep-label-success">0.03 sec</span>
+                <span class="cep-label-success">2 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Basic User Search Tests</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to search for &quot;bo&quot; to find &quot;bob&quot; as user</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for admin to search for &quot;st&quot; to find &quot;steve&quot; as user</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:56</span>
+                <span class="cep-label-success">0.02 sec</span>
+                <span class="cep-label-success">1 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Basic Group Search Tests</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to search for &quot;jir&quot; to find &quot;jira-*&quot; groups</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:56</span>
+                <span class="cep-label-success">0.09 sec</span>
+                <span class="cep-label-success">3 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>List Customfield Options Tests</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to list all options of field &quot;singleselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to list all options of field &quot;singleselectWithContexts&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.04 sec</span>
+                <h4>it should be possible for bob to list all options of field &quot;singleselectWithContexts&quot; for context contextForProjectTest</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:56</span>
+                <span class="cep-label-success">0.58 sec</span>
+                <span class="cep-label-success">3 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Create and Delete Customfield Options Test</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to create new option on field &quot;singleselectWithContexts&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should not be possible for bob to create the same option again on field &quot;singleselectWithContexts&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.54 sec</span>
+                <h4>it option should only have been created for default context and will be removed right away</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:57</span>
+                <span class="cep-label-success">0.08 sec</span>
+                <span class="cep-label-success">4 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>List Customfields Tests</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to list all customfields he has direct permission for</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for bob to list all customfields he has direct permission for under v1.1 URL</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for steve to list all customfields he has direct permission for</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to list all customfields he has indirect permission for because he is part of jira-administrator group</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:57</span>
+                <span class="cep-label-success">0.03 sec</span>
+                <span class="cep-label-success">2 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>List Customfield Contexts Tests</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to list all contexts of field &quot;cascadingselectWithContexts&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for bob to list all contexts of field &quot;cascadingselect&quot;</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:57</span>
+                <span class="cep-label-success">0.90 sec</span>
+                <span class="cep-label-success">7 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Sort Options</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for admin to give bob permission on field &quot;cascadingSelectForSortTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to list all options of field &quot;cascadingSelectForSortTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.19 sec</span>
+                <h4>it should be possible for bob to create options on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.04 sec</span>
+                <h4>it should be possible for bob to sort options DESCENDING on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.04 sec</span>
+                <h4>it should be possible for bob to sort options ASCENDING on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to sort options with invalid SortModel on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.57 sec</span>
+                <h4>it should be possible for bob to delete all options on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:58</span>
+                <span class="cep-label-success">0.17 sec</span>
+                <span class="cep-label-success">6 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Set Default Option - SINGLE SELECT</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.04 sec</span>
+                <h4>it should be possible for bob to set default value to &quot;firefox&quot; for field &quot;singleselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to get default value for field &quot;singleselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.04 sec</span>
+                <h4>it should be possible for bob to set default value to &quot;midori&quot; for field &quot;singleselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to get default value for field &quot;singleselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to unset default value for field &quot;singleselect&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to see that no default value is set for field &quot;singleselect&quot;</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:58</span>
+                <span class="cep-label-success">0.90 sec</span>
+                <span class="cep-label-success">3 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Set Default Option - MULTI SELECT</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.26 sec</span>
+                <h4>it should be possible for bob to set default value to &quot;Östringen, München&quot; for field &quot;multicheckboxesWithContexts&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to get default value for field &quot;multicheckboxesWithContexts&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.60 sec</span>
+                <h4>it should be possible for bob to delete all options on field &quot;multicheckboxesWithContexts&quot; for default context</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:59</span>
+                <span class="cep-label-success">0.07 sec</span>
+                <span class="cep-label-success">2 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Set Default Option - CASCADING SELECT</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.05 sec</span>
+                <h4>it should be possible for bob to set default value to &quot;katzen - schnurli&quot; for field &quot;cascadingselectWithContexts&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to get default value for field &quot;cascadingselectWithContexts&quot;</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:20:59</span>
+                <span class="cep-label-success">1.29 sec</span>
+                <span class="cep-label-success">6 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Disable and Sequence Tests</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to give bob permission on field &quot;cascadingSelectForSortTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to list all options of field &quot;cascadingSelectForSortTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.05 sec</span>
+                <h4>it should be possible for bob to create options on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.06 sec</span>
+                <h4>it should be possible for bob to check if disable flag is correctly saved and change it again for &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.59 sec</span>
+                <h4>it should be possible for bob to delete the option in the middle and leave the sequence intact for &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.54 sec</span>
+                <h4>it should be possible for bob to delete all options on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:21:00</span>
+                <span class="cep-label-success">0.30 sec</span>
+                <span class="cep-label-success">3 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Set permissions and add options</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to give bob permission on field &quot;cascadingSelectForSortTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to list all options of field &quot;cascadingSelectForSortTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.25 sec</span>
+                <h4>it should be possible for bob to create options on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:21:00</span>
+                <span class="cep-label-success">0.03 sec</span>
+                <span class="cep-label-success">1 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Get childOptions</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.03 sec</span>
+                <h4>it should be possible for bob to list all childOptions for all parents to check if they were inserted correctly on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:21:01</span>
+                <span class="cep-label-success">0.58 sec</span>
+                <span class="cep-label-success">1 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Delete childOptions</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.58 sec</span>
+                <h4>it should be possible for bob to delete a childOption of parentOption on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:21:01</span>
+                <span class="cep-label-success">0.07 sec</span>
+                <span class="cep-label-success">1 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Move childOptions</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.07 sec</span>
+                <h4>it should be possible for bob to move a childOption of parentOption on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:21:01</span>
+                <span class="cep-label-success">0.11 sec</span>
+                <span class="cep-label-success">4 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Sort childOptions Alphabetically</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to get parentOptionId of field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.03 sec</span>
+                <h4>it should be possible for bob to sort childOptions ASCENDING on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.03 sec</span>
+                <h4>it should be possible for bob to sort childOptions DESCENDING on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to sort options with invalid SortModel on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:21:01</span>
+                <span class="cep-label-success">0.01 sec</span>
+                <span class="cep-label-success">1 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Valdiation Checks on childOptions</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for bob to delete a child that does not belong to the parent on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:21:01</span>
+                <span class="cep-label-success">0.54 sec</span>
+                <span class="cep-label-success">1 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Cleanup</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.54 sec</span>
+                <h4>it should be possible for bob to delete all options on field &quot;cascadingSelectForSortTest&quot; for default context</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:21:02</span>
+                <span class="cep-label-success">1.30 sec</span>
+                <span class="cep-label-success">9 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>UserCustomFieldResource - CONTEXT SECURITY TESTS</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.06 sec</span>
+                <h4>it should be possible for cat to only get the contexts he has access for of field &quot;singleselectForContextSecurityTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.05 sec</span>
+                <h4>it should be possible for kater to only get the contexts he has access for of field &quot;singleselectForContextSecurityTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for cat to get the options of context he has no access for of field &quot;singleselectForContextSecurityTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for kater to get the options of context he has no access for of field &quot;singleselectForContextSecurityTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for cat to create new option on field &quot;singleselectForContextSecurityTest&quot; for context he has rights on</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.54 sec</span>
+                <h4>it should be possible for cat to delete the created option on field &quot;singleselectForContextSecurityTest&quot; for context he has rights on</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should not be possible for cat to create an option on field &quot;singleselectForContextSecurityTest&quot; for context he has no rights on</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for kater to create new option on field &quot;singleselectForContextSecurityTest&quot; for defaultContext he has rights on</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.55 sec</span>
+                <h4>it should be possible for cat to delete the created option on field &quot;singleselectForContextSecurityTest&quot; for context he has rights on</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:21:03</span>
+                <span class="cep-label-success">0.04 sec</span>
+                <span class="cep-label-success">2 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Set Permissions</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to give bob permission on field &quot;singleselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to give bob permission on field &quot;cascadingselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:21:03</span>
+                <span class="cep-label-success">1.28 sec</span>
+                <span class="cep-label-success">13 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Single Select</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should not be possible for bob to create an option of field &quot;singleselectWithContextsGuiTest&quot; with invalid url</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to create an option of field &quot;singleselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to create another option of field &quot;singleselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to list all options of field &quot;singleselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should not be possible for bob to list all options of field &quot;singleselectWithContextsGuiTest&quot; with invalid url</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to move an option of field &quot;singleselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for bob to move an option of field &quot;singleselectWithContextsGuiTest&quot; with invalid url</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to list all options of field &quot;singleselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for bob to delete an option of field &quot;singleselectWithContextsGuiTest&quot; with invalid url</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.52 sec</span>
+                <h4>it should be possible for bob to delete an option of field &quot;singleselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should not be possible for bob to edit an option of field &quot;singleselectWithContextsGuiTest&quot; with invalid url</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to edit an option of field &quot;singleselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.52 sec</span>
+                <h4>it should be possible for bob to delete an option of field &quot;singleselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:21:05</span>
+                <span class="cep-label-success">1.27 sec</span>
+                <span class="cep-label-success">14 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Cascading Select</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for bob to create an option of field &quot;cascadingselectWithContextsGuiTest&quot; with invalid url</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to create an option on field &quot;cascadingselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to create a childOption on field &quot;cascadingselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to create another childOption on field &quot;cascadingselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for bob to list all chilOptions of parent on field &quot;cascadingselectWithContextsGuiTest&quot; with invalid URL</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to list all chilOptions of parent on field &quot;cascadingselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should not be possible for bob to update an existing childOption on field &quot;cascadingselectWithContextsGuiTest&quot; with invalid URL</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to update an existing childOption on field &quot;cascadingselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should not be possible for bob to move an existing childOption on field &quot;cascadingselectWithContextsGuiTest&quot; with invalid URL</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for bob to move an existing childOption on field &quot;cascadingselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for bob to check moved sequence for all chilOptions of parent on field &quot;cascadingselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should not be possible for bob to delete a childOption of field &quot;cascadingselectWithContextsGuiTest&quot; with invalid URL</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.52 sec</span>
+                <h4>it should be possible for bob to delete a childOption of field &quot;cascadingselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.52 sec</span>
+                <h4>it should be possible for bob to delete an option of field &quot;cascadingselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+        </div>
+        <div class="testsuite">
+            <div class="cep-testsuite-single-header">
+                <span class="cep-label-success">2016-09-18T11:21:06</span>
+                <span class="cep-label-success">0.10 sec</span>
+                <span class="cep-label-success">5 tests</span>
+                <span class="cep-label-success">0 failures</span>
+            </div>
+            <h3>Manual Tests - GIVE PERMISSIONS</h3>
+            <div class="cep-clear"></div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to give cat and kater permission on field &quot;singleselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.01 sec</span>
+                <h4>it should be possible for admin to give cat and kater permission on field &quot;multiselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to give cat and kater permission on field &quot;cascadingselectWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to give cat and kater permission on field &quot;multicheckboxesWithContextsGuiTest&quot;</h4>
+
+            </div>
+            <div class="testcase ">
+                <span class="cep-label-success-single">0.02 sec</span>
+                <h4>it should be possible for admin to give cat and kater permission on field &quot;radiobuttonsWithContextsGuiTest&quot;</h4>
+
+            </div>
+        </div>
+
+
+    </main>
+    <nav class="cep-baselayout-nav">
+        <div class="cep-version-nav">
+                    <a class="cep-version-nav__item cep-version-nav__item--is-active" href="#">
+                        <strong>1.2.3</strong>
+                    </a>
+                    <a class="cep-version-nav__item" href="./1.2.2.html">
+                        1.2.2
+                    </a>
+        </div>
+        
+        
+    </nav>
+    <aside class="cep-baselayout-ads">
+        &nbsp;
+    </aside>
+</div>
+<footer>
+    <a href="http://codeclou.io/redirect/r.php?r=lkmwyvgm">Customfield Editor Plugin Website</a> -
+    <a href="https://codeclou.io">codeclou.io</a> © 2016 - <a href="http://codeclou.io/redirect/r.php?r=gxyzelrm">Impressum</a>
+</footer>
+
+</body>
+</html>

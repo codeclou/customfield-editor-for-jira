@@ -1,0 +1,146 @@
+/* ================== */
+/* PARENT PAGE */
+/* ================== */
+
+body {
+    padding:15px;
+}
+
+.cep-baselayout,
+.cep-baselayout-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.cep-baselayout-nav {
+    order: -1;
+}
+
+@media (min-width: 768px) {
+    .cep-baselayout-body {
+        flex-direction: row;
+        flex: 1;
+    }
+    .cep-baselayout-content {
+        flex: 1;
+    }
+    .cep-baselayout-nav, .cep-baselayout-ads {
+        /* 12em is the width of the columns */
+        flex: 0 0 12em;
+    }
+}
+
+
+/* headlines */
+.cep-headline-primary {
+    background-image: url('../data/cep-logo-32.png');
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    padding-left: 38px;
+    padding-top:3px;
+    font-size: 22px;
+    line-height: 26px;
+    height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0;
+}
+.cep-headline-secondary {
+    display: inline-block;
+    font-size:16px;
+    padding-left: 38px;
+    font-weight:bold;
+    margin-top:3px;
+    margin-bottom:20px;
+}
+.cep-headline-tertiary {
+    display: inline-block;
+    font-size:16px;
+    font-weight:normal;
+    margin-top:0px;
+    margin-bottom:20px;
+}
+.cep-tertiary-headline-icon:before {
+    font-size:16px;
+}
+.cep-clear {
+    clear: both;
+}
+
+
+/* ================== */
+/* RESULT IFRAME */
+/* ================== */
+.testcase {
+    margin-bottom:20px; margin-left:30px; padding:3px;
+}
+.testcase-error { background-color: rgba(255, 0, 42, 0.27);}
+.testsuite {
+    background-color: rgba(239, 239, 239, 0.33);padding:10px; margin-bottom:30px;border-bottom:1px solid rgba(204, 204, 204, 0.44);
+}
+h3 {
+    font-size:16px;
+    margin: 0;
+    padding: 0;
+}
+h4 {
+    font-size:16px;
+    margin: 0;
+    padding: 0;
+    font-weight:normal;
+}
+
+.cep-testsuite-single-header {
+    float:right;
+}
+.cep-testsuite-header {
+    margin-bottom:20px;
+}
+
+.cep-label-success, .cep-label-error, .cep-label-success-single {
+    border-left:3px solid #006a00;
+    background-color: rgba(0, 106, 0, 0.2);
+    padding:4px;
+    padding-left:8px;
+    padding-right:8px;
+    display: inline-block;
+    margin:5px;
+}
+.cep-label-error {
+    border-left: 3px solid #b30026;
+    background-color: rgba(179, 0, 38, 0.2);
+}
+.cep-label-success-single {
+    padding:3px;
+    margin:0;
+    float:right;
+}
+
+.cep-testsuite-header .cep-label-success {
+    font-size:30px;
+}
+
+footer {
+    text-align:center;
+}
+footer, footer a {
+    color:#aaa;
+}
+
+.cep-version-nav {
+
+}
+.cep-version-nav__item {
+    color:#000000;
+    display:block;
+    border:1px solid #efefef;
+    padding:5px;
+    margin-bottom:10px;
+    margin-right:10px;
+    text-decoration:none;
+}
+.cep-version-nav__item--is-active {
+    background-color: rgba(114, 196, 239, 0.59);
+}
