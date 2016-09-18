@@ -24,6 +24,187 @@
             <span class="cep-label-success">0 failures</span>
         </div>
 
+        <div class="cep-preconditions">
+            <h2>Preconditions</h2>
+            <p>These existing <strong>customfields</strong> are expected by the test:</p>
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>Fieldname</th>
+                    <th>preset values</th>
+                    <th>default value</th>
+                    <th>preset permissions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>singleselect</td>
+                    <td>defaultContext [ firefox, chrome, midori, safari, opera ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>cascadingselect</td>
+                    <td>defaultContext [ browsers: [ firefox, chrome, midori, safari, opera ], ‘operating systems’: [ iOS, Android ] ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>textfield</td>
+                    <td>-</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>singleselectWithContexts</td>
+                    <td>defaultContext [ foo, bar, barfoo ] ; contextForProjectTest [ blub, blob, blib ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>cascadingselectWithContexts</td>
+                    <td>defaultContext [ katzen: [ micki, schnurli, leo ], hunde: [ bello, lassie, rex ] ]; contextForProjectTest [ pilze: [ Gifthäubling, Fliegenpilz, Riesenrötling ], baeume: [ Ahorn, Eiche, Gingko ] ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>multicheckboxesWithContexts</td>
+                    <td>defaultContext [ ]; contextForProjectTest [ ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>multiselectWithContexts</td>
+                    <td>defaultContext [ ]; contextForProjectTest [ ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>radiobuttonsWithContexts</td>
+                    <td>defaultContext [ ]; contextForProjectTest [ ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>cascadingSelectForSortTest</td>
+                    <td>defaultContext [ ]; contextForProjectTest [ ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>singleselectForContextSecurityTest</td>
+                    <td>defaultContext [ foo, bar, barfoo ] ; contextForProjectTest [ blub, blob, blib ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>cascadingselectForContextSecurityTest</td>
+                    <td>defaultContext [ foo, bar, barfoo ]; contextForProjectTest [ blub, blob, blib ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>These existing <strong>customfields</strong> for <strong>manual tests</strong>:</p>
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>Fieldname</th>
+                    <th>preset values</th>
+                    <th>default value</th>
+                    <th>preset permissions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>singleselectWithContextsGuiTest</td>
+                    <td>defaultContext [ ]; contextForProjectTest [ ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>multiselectWithContextsGuiTest</td>
+                    <td>defaultContext [ ]; contextForProjectTest [ ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>cascadingselectWithContextsGuiTest</td>
+                    <td>defaultContext [ ]; contextForProjectTest [ ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>multicheckboxesWithContextsGuiTest</td>
+                    <td>defaultContext [ ]; contextForProjectTest [ ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>radiobuttonsWithContextsGuiTest</td>
+                    <td>defaultContext [ ]; contextForProjectTest [ ]</td>
+                    <td>none</td>
+                    <td>none</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>These existing <strong>users</strong> are expected by the test:</p>
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Notes</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>steve</td>
+                    <td>1234</td>
+                    <td>jira user  + ONLY TO BE USED FOR AUTOMATED TESTS</td>
+                </tr>
+                <tr>
+                    <td>bob</td>
+                    <td>5678</td>
+                    <td>jira user  + ONLY TO BE USED FOR AUTOMATED TESTS</td>
+                </tr>
+                <tr>
+                    <td>admin</td>
+                    <td>admin</td>
+                    <td>jira admin + jira sysadmin</td>
+                </tr>
+                <tr>
+                    <td>cat</td>
+                    <td>foo</td>
+                    <td>GUI Testuser EN Locale + context security tests</td>
+                </tr>
+                <tr>
+                    <td>kater</td>
+                    <td>foo</td>
+                    <td>GUI Testuser DE Locale + context security tests</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>These existing <strong>projects</strong> are expected by the test:</p>
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Key</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>test</td>
+                    <td>TEST</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <h2>Testsuite</h2>
+
         <div class="testsuite">
             <div class="cep-testsuite-single-header">
                 <span class="cep-label-success">2016-09-18T11:20:56</span>
