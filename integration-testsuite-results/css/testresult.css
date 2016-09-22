@@ -2,8 +2,8 @@
 /* PARENT PAGE */
 /* ================== */
 
-body {
-    padding:15px;
+.content {
+    padding:30px;
 }
 
 .cep-baselayout,
