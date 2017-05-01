@@ -2,12 +2,12 @@
 
 # Customfield Editor Plugin for Atlassian JIRA®
 
-:unlock: This is the repository for the [Customfield Editor Plugin](http://codeclou.io/redirect/r.php?r=lkmwyvgm) for Atlassian JIRA® made by [codeclou.io](http://codeclou.io/redirect/r.php?r=lxpaoljm).
+This is the repository for the [Customfield Editor Plugin](https://codeclou.io/products/customfield-editor-plugin/) for Atlassian JIRA® made by [codeclou.io](https://codeclou.io/).
 
 -----
 
-   * :bulb: [Usage Guide](http://codeclou.io/redirect/r.php?r=alxppwex)
-   * :bulb: [Issue-Tracker](http://codeclou.io/redirect/r.php?r=yzxrboqx)
-   * :bulb: [REST API](http://codeclou.io/redirect/r.php?r=ejxkybyx)
-   * :bulb: [EULA](http://codeclou.io/redirect/r.php?r=ogxydoym)
-   * :bulb: [Atlassian Marketplace](http://codeclou.io/redirect/r.php?r=wrmdoavx)
+   * :bulb: [Usage Guide](https://codeclou.io/customfield-editor-plugin/redirect/?/latest/user-guide/)
+   * :bulb: [Issue-Tracker](https://github.com/codeclou/customfield-editor-plugin/issues)
+   * :bulb: [REST API](https://codeclou.io/customfield-editor-plugin/redirect/?/latest/rest-api/)
+   * :bulb: [EULA](https://codeclou.io/customfield-editor-plugin/redirect/?/latest/license/)
+   * :bulb: [Atlassian Marketplace](https://marketplace.atlassian.com/plugins/jiracustomfieldeditorplugin/server/overview)
