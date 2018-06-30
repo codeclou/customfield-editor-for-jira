@@ -11,4 +11,4 @@ This is the repository for the [Customfield Editor Plugin](https://codeclou.io/p
    * :bulb: [REST API Documentation](https://codeclou.io/customfield-editor-plugin/redirect/?/latest/rest-api/)
    * :bulb: [Issue-Tracker](https://github.com/codeclou/customfield-editor-plugin/issues)
    * :bulb: [EULA](https://codeclou.io/customfield-editor-plugin/redirect/?/latest/license/)
-   * :bulb: [Atlassian Marketplace](https://marketplace.atlassian.com/plugins/jiracustomfieldeditorplugin/server/overview)
+   * :bulb: [Atlassian Marketplace](https://marketplace.atlassian.com/apps/1212096/customfield-editor-plugin)
