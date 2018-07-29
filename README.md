@@ -8,7 +8,7 @@ This is a reference implementation of a cli-client written in python for the [Cu
 
 :exclamation: **The REST CLI Client does not intend to implement all available API features. It only demonstrates basic usage examples.**
  
-See the full documentation and usage on the [REST CLI Client page](http://codeclou.io/redirect/r.php?r=alxpzlvx).
+See the full documentation and usage on the [REST CLI Client page](https://codeclou.io/customfield-editor-plugin/1.7.1/rest-api-client/).
 
 The client is compatible to [API version 1.2](https://codeclou.github.io/customfield-editor-plugin/1.2/) of Customfield Editor Plugin.
 
