@@ -9,6 +9,6 @@ This is the repository for the [Customfield Editor Plugin](https://codeclou.io/p
    * :bulb: [Usage Guide](https://codeclou.io/customfield-editor-plugin/redirect/?/latest/user-guide/)
    * :bulb: [Administrator Guide](https://codeclou.io/customfield-editor-plugin/redirect/?/latest/administrator-guide/)
    * :bulb: [REST API Documentation](https://codeclou.io/customfield-editor-plugin/redirect/?/latest/rest-api/)
-   * :bulb: [Issue-Tracker](https://github.com/codeclou/customfield-editor-plugin/issues)
+   * :bulb: [Support & Issue-Tracker](https://codeclou.io/customfield-editor-plugin/redirect/?/latest/issue-tracker/)
    * :bulb: [EULA](https://codeclou.io/customfield-editor-plugin/redirect/?/latest/license/)
    * :bulb: [Atlassian Marketplace](https://marketplace.atlassian.com/apps/1212096/customfield-editor-plugin)
