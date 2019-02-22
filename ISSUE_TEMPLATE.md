@@ -1,6 +1,8 @@
-### Please provide helpful information
+### Please use the Service Desk
 
-Please have a look at the "How to Create an Issue" section on:
+This Issue Tracker is not used for Support Requests anymore.
 
-https://codeclou.io/customfield-editor-plugin/redirect/?/latest/issue-tracker/#howto
+Please use the Service Desk to raise support requests, thanks:
+
+https://codeclou-support.atlassian.net/servicedesk/customer/portal/1
 
