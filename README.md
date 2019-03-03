@@ -1,8 +1,8 @@
 <img src="https://cloud.githubusercontent.com/assets/17686535/17839034/a007860a-67dc-11e6-88f0-61a53c3da054.png" align="right" />
 
-# Customfield Editor Plugin for Atlassian JIRA®
+# Customfield Editor for Atlassian JIRA®
 
-This is the repository for the [Customfield Editor Plugin](https://codeclou.io/products/customfield-editor-plugin/) for Atlassian JIRA® made by [codeclou.io](https://codeclou.io/).
+This is the repository for the app [Customfield Editor for Jira](https://codeclou.io/products/customfield-editor-plugin/) made by [codeclou.io](https://codeclou.io/).
 
 -----
 
