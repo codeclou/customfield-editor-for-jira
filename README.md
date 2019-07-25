@@ -6,9 +6,9 @@ This is the repository for the app [Customfield Editor for Jira](https://codeclo
 
 -----
 
-   * :bulb: [Usage Guide](https://codeclou.io/customfield-editor-plugin/latest/user-guide/)
-   * :bulb: [Administrator Guide](https://codeclou.io/customfield-editor-plugin/latest/administrator-guide/)
-   * :bulb: [REST API Documentation](https://codeclou.io/customfield-editor-plugin/latest/rest-api/)
-   * :bulb: [Support & Issue-Tracker](https://codeclou.io/customfield-editor-plugin/latest/support/)
-   * :bulb: [EULA](https://codeclou.io/customfield-editor-plugin/redirect/latest/license/)
+   * :bulb: [Usage Guide](https://codeclou.io/customfield-editor-for-jira/latest/user-guide/)
+   * :bulb: [Administrator Guide](https://codeclou.io/customfield-editor-for-jira/latest/admin-guide/get-started/)
+   * :bulb: [REST API Documentation](https://codeclou.io/customfield-editor-for-jira/latest/rest-api/)
+   * :bulb: [Support & Issue-Tracker](https://codeclou.io/customfield-editor-for-jira/latest/support/)
+   * :bulb: [EULA](https://codeclou.io/customfield-editor-for-jira/latest/license/)
    * :bulb: [Atlassian Marketplace](https://marketplace.atlassian.com/apps/1212096/customfield-editor-for-jira)
