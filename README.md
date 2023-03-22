@@ -7,3 +7,5 @@ This is the repository for the app [Customfield Editor for Jira](https://codeclo
 -----
 
    * :bulb: [Atlassian Marketplace](https://marketplace.atlassian.com/apps/1212096/customfield-editor-for-jira)
+   * :bulb: [Data Center Roadmap](https://github.com/codeclou/customfield-editor-for-jira/projects/1)
+   * :bulb: [Cloud Roadmap](https://github.com/codeclou/customfield-editor-for-jira/projects/2)
